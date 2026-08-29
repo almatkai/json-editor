@@ -1,0 +1,69 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "id": "com.tezbar.json-editor",
+  "name": "json-editor",
+  "title": "JSON Editor",
+  "description": "Format, filter, and convert JSON directly in Tezbar.",
+  "version": "0.1.0",
+  "author": "almatkai",
+  "contributors": ["HerbertLu", "jvrbnjak89"],
+  "icon": "assets/icon.svg",
+  "categories": ["Productivity", "Developer Tools", "Data"],
+  "keywords": ["json", "yaml", "typescript", "golang", "format", "minify"],
+  "license": "MIT",
+  "platforms": ["macOS", "Windows"],
+  "commands": [
+    {
+      "name": "edit-json",
+      "title": "Edit JSON",
+      "description": "Format, filter, minify, escape, and convert JSON.",
+      "mode": "view",
+      "platforms": ["macOS", "Windows"]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "rootName",
+      "description": "Name used for the root generated type.",
+      "type": "textfield",
+      "required": false,
+      "default": "RootObject",
+      "title": "Generated Types - Root Name"
+    },
+    {
+      "name": "prefix",
+      "description": "Optional prefix for generated TypeScript interfaces.",
+      "type": "textfield",
+      "required": false,
+      "default": "I",
+      "title": "Generated Types - Prefix"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.1",
+    "js-yaml": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "tsx": "^4.22.4",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "tezbar": {
+    "schemaVersion": 1,
+    "platforms": ["macos", "windows"],
+    "linuxStatus": "coming-soon",
+    "repository": "https://github.com/almatkai/json-editor",
+    "upstream": {
+      "repository": "https://github.com/raycast/extensions",
+      "path": "extensions/json-editor",
+      "commit": "6734d85992290066fd31a7f5bee3cca3d3545a1a"
+    }
+  }
+}
